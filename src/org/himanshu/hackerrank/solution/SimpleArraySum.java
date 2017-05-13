@@ -13,14 +13,15 @@ public class SimpleArraySum {
 
 	public static void main(String[] args) {
 		int sum;
-		Scanner in = new Scanner(System.in);
-		int size = in.nextInt();
-		int arr[] = new int[size];
-		for (int index = 0; index < size; index++) {
-			arr[index] = in.nextInt();
+		try (Scanner input = new Scanner(System.in);) {
+			int size = input.nextInt();
+			int arr[] = new int[size];
+			for (int index = 0; index < size; index++) {
+				arr[index] = input.nextInt();
+			}
+			sum = findSumOfElements(arr);
+			System.out.println(sum);
 		}
-		sum = findSumOfElements(arr);
-		System.out.println(sum);
 	}
 
 	/**
